@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://bn8asl0lamscb"]
+
+[ext_resource type="PackedScene" uid="uid://b2uc6457iul7a" path="res://src/bar.tscn" id="1_yn12h"]
+
+[node name="MainScene" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Bar" parent="CanvasLayer" instance=ExtResource("1_yn12h")]
+color = Color(1, 0, 0, 1)
+
+[node name="Bar" parent="CanvasLayer/Bar" instance=ExtResource("1_yn12h")]
+layout_mode = 0
+offset_top = 336.0
+offset_bottom = 464.0
+color = Color(0, 0.188235, 0.835294, 1)
+refill_rate = 20
+increase_amount = 5
+decrease_amount = 30

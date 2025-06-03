@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2uc6457iul7a"]
+
+[ext_resource type="Script" uid="uid://ypfx1kjp6vh3" path="res://src/bar.gd" id="1_4rfy8"]
+
+[node name="Bar" type="ProgressBar"]
+offset_right = 1152.0
+offset_bottom = 128.0
+script = ExtResource("1_4rfy8")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 376.0
+offset_top = 152.0
+offset_right = 776.0
+offset_bottom = 297.0
+theme_override_constants/separation = 50
+
+[node name="ButtonMinus" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "-"
+
+[node name="ButtonPlus" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "+"
+
+[connection signal="pressed" from="HBoxContainer/ButtonMinus" to="." method="_on_button_minus_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPlus" to="." method="_on_button_plus_pressed"]
