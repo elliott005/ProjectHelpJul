@@ -3,17 +3,23 @@
 [ext_resource type="Script" uid="uid://ypfx1kjp6vh3" path="res://src/bar.gd" id="1_4rfy8"]
 
 [node name="Bar" type="ProgressBar"]
-offset_right = 1152.0
+offset_left = 192.0
+offset_right = 960.0
 offset_bottom = 128.0
 script = ExtResource("1_4rfy8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 376.0
-offset_top = 152.0
-offset_right = 776.0
-offset_bottom = 297.0
+offset_left = -184.0
+offset_top = 136.0
+offset_right = 952.0
+offset_bottom = 281.0
 theme_override_constants/separation = 50
+
+[node name="Label2" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Valeur:"
 
 [node name="ButtonMinus" type="Button" parent="HBoxContainer"]
 custom_minimum_size = Vector2(175, 0)
@@ -27,5 +33,24 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "+"
 
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Regen:"
+
+[node name="ButtonMinusDelta" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "-"
+
+[node name="ButtonPlusDelta" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 100
+text = "+"
+
 [connection signal="pressed" from="HBoxContainer/ButtonMinus" to="." method="_on_button_minus_pressed"]
 [connection signal="pressed" from="HBoxContainer/ButtonPlus" to="." method="_on_button_plus_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonMinusDelta" to="." method="_on_button_minus_delta_pressed"]
+[connection signal="pressed" from="HBoxContainer/ButtonPlusDelta" to="." method="_on_button_plus_delta_pressed"]

@@ -9,11 +9,7 @@
 [node name="Bar" parent="CanvasLayer" instance=ExtResource("1_yn12h")]
 color = Color(1, 0, 0, 1)
 
-[node name="Bar" parent="CanvasLayer/Bar" instance=ExtResource("1_yn12h")]
-layout_mode = 0
+[node name="Bar2" parent="CanvasLayer" instance=ExtResource("1_yn12h")]
 offset_top = 336.0
 offset_bottom = 464.0
 color = Color(0, 0.188235, 0.835294, 1)
-refill_rate = 20
-increase_amount = 5
-decrease_amount = 30
