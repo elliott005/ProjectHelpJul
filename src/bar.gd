@@ -1,5 +1,7 @@
 extends ProgressBar
 
+@onready var h_box_container = $HBoxContainer
+
 @export var color: Color
 @export var refill_rate = 1
 @export var increase_amount = 10
@@ -8,7 +10,10 @@ extends ProgressBar
 @export var decrease_delta_amount = 1
 
 func _ready():
-	modulate = color
+	var style_box = StyleBoxFlat.new()
+	style_box.bg_color = color
+	add_theme_stylebox_override("fill", style_box)
+	h_box_container.modulate = color
 
 func _process(delta):
 	value = min(value + refill_rate * delta, max_value)
