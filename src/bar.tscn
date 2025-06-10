@@ -2,21 +2,30 @@
 
 [ext_resource type="Script" uid="uid://ypfx1kjp6vh3" path="res://src/bar.gd" id="1_4rfy8"]
 
-[node name="Bar" type="ProgressBar"]
-offset_left = 192.0
-offset_right = 960.0
-offset_bottom = 128.0
+[node name="Bar" type="ReferenceRect"]
+custom_minimum_size = Vector2(1152, 230)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_4rfy8")
+
+[node name="Bar" type="ProgressBar" parent="."]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 1088.0
+offset_bottom = 81.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
 value = 100.0
-script = ExtResource("1_4rfy8")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
-layout_mode = 2
-offset_left = -184.0
-offset_top = 136.0
-offset_right = 952.0
-offset_bottom = 281.0
+offset_left = 8.0
+offset_top = 88.0
+offset_right = 1144.0
+offset_bottom = 233.0
 theme_override_constants/separation = 50
 
 [node name="Label2" type="Label" parent="HBoxContainer"]
@@ -25,13 +34,13 @@ theme_override_font_sizes/font_size = 32
 text = "Valeur:"
 
 [node name="ButtonMinus" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(175, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "-"
 
 [node name="ButtonPlus" type="Button" parent="HBoxContainer"]
-custom_minimum_size = Vector2(175, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 100
 text = "+"

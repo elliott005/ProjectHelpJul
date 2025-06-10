@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://wlvrgje4tt1v"]
+
+[ext_resource type="PackedScene" uid="uid://b2uc6457iul7a" path="res://src/bar.tscn" id="1_cp0uw"]
+
+[node name="VBoxContainer" type="VBoxContainer"]
+metadata/_tab_index = 0
+
+[node name="Bar" parent="." instance=ExtResource("1_cp0uw")]
+layout_mode = 2
+color = Color(0, 0.823529, 0, 1)
+
+[node name="Bar2" parent="." instance=ExtResource("1_cp0uw")]
+layout_mode = 2
+color = Color(0, 0.866667, 0.835294, 1)
