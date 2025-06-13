@@ -2,15 +2,23 @@ extends ReferenceRect
 
 @onready var h_box_container = $HBoxContainer
 @onready var bar = $Bar
+@onready var value_label = $HBoxContainer/ValueLabel
 
+@export var bar_name := "HP"
 @export var color: Color
 @export var refill_rate = 1
-@export var increase_amount = 10
-@export var decrease_amount = 10
+@export var increase_amount = 5
+@export var decrease_amount = 5
 @export var increase_delta_amount = 1
 @export var decrease_delta_amount = 1
 
+var bar_name_size = 5
+
 func _ready():
+	var extra_spaces = ""
+	for i in range(bar_name_size - bar_name.length()):
+		extra_spaces += " "
+	value_label.text = bar_name + ":" + extra_spaces
 	var style_box = StyleBoxFlat.new()
 	style_box.bg_color = color
 	bar.add_theme_stylebox_override("fill", style_box)

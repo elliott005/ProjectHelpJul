@@ -1,14 +1,54 @@
-[gd_scene load_steps=2 format=3 uid="uid://wlvrgje4tt1v"]
+[gd_scene load_steps=3 format=3 uid="uid://wlvrgje4tt1v"]
 
 [ext_resource type="PackedScene" uid="uid://b2uc6457iul7a" path="res://src/bar.tscn" id="1_cp0uw"]
+[ext_resource type="Script" uid="uid://b4wlyd23y586n" path="res://src/tab.gd" id="1_e0f4i"]
 
-[node name="VBoxContainer" type="VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer"]
+offset_right = 1156.0
+offset_bottom = 464.0
+script = ExtResource("1_e0f4i")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
 metadata/_tab_index = 0
 
-[node name="Bar" parent="." instance=ExtResource("1_cp0uw")]
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "#1"
+horizontal_alignment = 1
+
+[node name="Bar1-1" parent="VBoxContainer" instance=ExtResource("1_cp0uw")]
+unique_name_in_owner = true
 layout_mode = 2
 color = Color(0, 0.823529, 0, 1)
 
-[node name="Bar2" parent="." instance=ExtResource("1_cp0uw")]
+[node name="Bar1-2" parent="VBoxContainer" instance=ExtResource("1_cp0uw")]
+unique_name_in_owner = true
 layout_mode = 2
+bar_name = "MANA"
 color = Color(0, 0.866667, 0.835294, 1)
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Label" type="Label" parent="VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "#2"
+horizontal_alignment = 1
+
+[node name="Bar2-1" parent="VBoxContainer2" instance=ExtResource("1_cp0uw")]
+unique_name_in_owner = true
+layout_mode = 2
+color = Color(0, 0.823529, 0, 1)
+
+[node name="Bar2-2" parent="VBoxContainer2" instance=ExtResource("1_cp0uw")]
+unique_name_in_owner = true
+layout_mode = 2
+bar_name = "MANA"
+color = Color(0, 0.866667, 0.835294, 1)
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 2

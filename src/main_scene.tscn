@@ -19,12 +19,20 @@ current_tab = 0
 
 [node name="001" parent="CanvasLayer/TabContainer" instance=ExtResource("1_yn12h")]
 layout_mode = 2
+metadata/_tab_index = 0
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 grow_horizontal = 0
+
+[node name="DeltaButton" type="Button" parent="CanvasLayer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "5"
 
 [node name="AddTabButton" type="Button" parent="CanvasLayer/HBoxContainer"]
 custom_minimum_size = Vector2(75, 0)
@@ -38,5 +46,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "-"
 
+[connection signal="pressed" from="CanvasLayer/HBoxContainer/DeltaButton" to="." method="_on_delta_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/AddTabButton" to="." method="_on_add_tab_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/HBoxContainer/RemoveTabButton" to="." method="_on_remove_tab_button_pressed"]
